@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const Router = () => {
-  const routes = [
+  const router = createBrowserRouter([
     {
       path: "/",
       element: <>Home</>,
@@ -11,9 +11,9 @@ const Router = () => {
       path: "/shop",
       element: <>Shop</>,
     }
-  ];
+  ]);
 
-  return <RouterProvider router={createBrowserRouter(routes)} />;
+  return <RouterProvider router={router} />;
 };
 
 export default Router;
