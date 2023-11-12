@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from "../api";
+import "../styles/shop.css"
 
 const Shop = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,12 @@ const Shop = () => {
     <>
       <h1>Shop</h1>
       <ul>
-        {isLoading ? 'Loading...' : data.map((item) => (<li key={item.title}>{item.title}</li>))}
+        {isLoading ? 'Loading...' : data.map((item) => (
+        <li key={item.title}>
+          {item.title}<br />
+          <img src={item.image} />
+        </li>
+        ))}
       </ul>
     </>
   );
