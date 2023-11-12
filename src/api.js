@@ -1,12 +1,16 @@
 const api = (() => {
-  const URL = 'https://fakestoreapi.com';
+  const URI = 'https://fakestoreapi.com';
 
   const getList = async () => {
-    const response = await fetch(`${URL}/products/category/electronics`)
+    const response = await fetch(`${URI}/products/category/electronics`)
     return response.json();
   };
 
-  return { getList };
+  const getImg = async (src) => {
+    return await fetch(src);
+  };
+
+  return { getList, getImg };
 })();
 
 export default api;
