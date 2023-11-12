@@ -1,7 +1,12 @@
+import { Outlet } from "react-router-dom";
+import Nav from "./Nav";
+
 const App = () => (
-  <>
-    Home
-  </>
-);
+    <>
+      <Nav />
+      <Outlet />
+    </>
+  );
+  
 
 export default App;
