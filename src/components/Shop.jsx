@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
+import api from "../api";
 
 const Shop = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/electronics')
-      .then((response) => response.json())
-      .then((data) => {
-        setIsLoading(false);
-        setData(data);
+    api.getList().then((data) => {
+      setIsLoading(false);
+      setData(data);
     });
   }, []);
 
