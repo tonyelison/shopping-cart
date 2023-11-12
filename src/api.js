@@ -6,11 +6,7 @@ const api = (() => {
     return response.json();
   };
 
-  const getImg = async (src) => {
-    return await fetch(src);
-  };
-
-  return { getList, getImg };
+  return { getList };
 })();
 
 export default api;
